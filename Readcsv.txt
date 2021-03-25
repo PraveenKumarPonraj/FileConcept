@@ -2,3 +2,22 @@ name,age
 praveen,23
 
 
+import unittest
+import Banking
+
+class Test_Banking(unittest.TestCase):
+    def test_deposit(self):
+        self.assertLessEqual(1000,10000,msg=None)
+        pin="1234"
+        value="1234"
+        message = "valid pin"
+        self.assertEqual(pin,value,message)
+
+    def test_withdraw(self):
+        withdraw_amount=1000
+        balance=500
+        message="insufficent balance"
+        self.assertGreater(withdraw_amount,balance,message)
+
+if __name__=="__main__":
+    unittest.main()        
